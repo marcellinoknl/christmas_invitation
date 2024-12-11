@@ -44,7 +44,7 @@
                     </ul>
 
                     <div class="nav__close" id="nav-close">
-                        <i class='bx bx-x' ></i>
+                        <i class='bx bx-x'></i>
                     </div>
 
                     <img src="assets/img/nav-light.png" alt="" class="nav__img">
@@ -64,6 +64,33 @@
 
         <!--==================== MAIN ====================-->
         <main class="main">
+            <audio id="background-music" autoplay loop>
+                <source src="assets/music/christmas_song.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  const audio = document.getElementById("background-music");
+              
+                  // Try muted autoplay first
+                  audio.muted = true;
+                  audio.play()
+                    .then(() => {
+                      // Unmute the audio after it starts playing
+                      audio.muted = false;
+                    })
+                    .catch(error => {
+                      console.error("Autoplay failed, waiting for user interaction:", error);
+              
+                      // Play the audio on the first user interaction
+                      document.addEventListener("click", () => {
+                        audio.muted = false;
+                        audio.play();
+                      });
+                    });
+                });
+              </script>
+              
             <!--==================== HOME ====================-->
             <section class="home" id="home">
                 <div class="home__container container grid">

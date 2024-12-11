@@ -346,6 +346,11 @@ body.dark-theme {
   cursor: pointer;
 }
 
+/*=========== Music Backgtound ==============*/
+audio {
+  display: none;
+}
+
 /*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
