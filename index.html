@@ -16,15 +16,15 @@
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="assets/css/styles.css">
 
-        <title>Responsive Christmas Website - Bedimcode</title>
+        <title>Natal Keluarga Karyawan Kristen RSU ESHMUN</title>
     </head>
     <body>
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <nav class="nav container">
                 <a href="#" class="nav__logo">
-                    <img src="assets/img/logo.png" alt="" class="nav__logo-img"> 
-                    Christmas
+                    <img src="assets/img/logo.jpg" alt="" class="nav__logo-img"> 
+                    Keluarga Karyawan Kristen RSU ESHMUN
                 </a>
 
                 <div class="nav__menu" id="nav-menu">
@@ -68,41 +68,88 @@
             <section class="home" id="home">
                 <div class="home__container container grid">
                     <img src="assets/img/home.png" alt="" class="home__img">
-
+            
                     <div class="home__data">
-                        <h1 class="home__title">Merry Christmas and <br> Happy New Year!</h1>
-                        <p class="home__description">
-                            Christmas and a new year is about to begin, 
-                            all good wishes and successes.
-                        </p>
-                        <a href="#" class="button">Get Started</a>
+                        <h1 class="home__title">Undangan <br>Perayaan Natal Keluarga Karyawan Kristen<br> Rumah Sakit ESHMUN!</h1>
+                        <!-- Tombol tetap mengarah ke bagian berikut -->
+                        <a href="#section-next" class="button" id="showModal">Lihat Informasi Natal</a>
                     </div>
                 </div>
             </section>
+        
+            <!-- Modal -->
+            <div class="modal" id="modal">
+                <div class="modal__content">
+                    <span class="modal__close" id="closeModal">&times;</span>
+                    <p>
+                        <strong>THEMA:<br></strong> FAITH, HOPE AND LOVE <br>
+                        <strong>SUB THEMA:</strong> <br>
+                        Melalui perayaan Natal marilah kita menaruh harapan kepada Yesus Kristus untuk membangkitkan iman serta terjalinnya tali persaudaraan di dalam kasih Kristus. <br>
+                        <em>(Roma 5:5)</em><br><br>
+                        Sabtu, 14 Desember 2024
+                    </p>
+                </div>
+            </div>
+            <script>
+                // Ambil elemen tombol dan modal
+                const showModalButton = document.getElementById('showModal');
+                const modal = document.getElementById('modal');
+                const closeModalButton = document.getElementById('closeModal');
+            
+                // Fungsi untuk menampilkan modal dan scroll ke section tujuan
+                showModalButton.addEventListener('click', (e) => {
+                    e.preventDefault(); // Mencegah reload default dari tombol
+                    modal.style.display = 'block';
+            
+                    // Scroll ke section berikutnya
+                    const targetSection = document.querySelector(showModalButton.getAttribute('href'));
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+            
+                    // Hapus modal setelah 3 detik
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                    }, 3000);
+                });
+            
+                // Fungsi untuk menutup modal
+                closeModalButton.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                });
+            
+                // Menutup modal jika area luar diklik
+                window.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+            </script>
+                        
 
             <!--==================== GIVING ====================-->
-            <section class="giving section container">
+            <section class="giving section container" id="section-next">
                 <h2 class="section__title">
-                    Start Giving This <br> Christmas
+                    Rencana & Tempat Kegiatan
                 </h2>
 
                 <div class="giving__container grid">
                     <div class="giving__content">
                         <img src="assets/img/giving1.png" alt="" class="giving__img">
-                        <h3 class="giving__title">Surprise gifts</h3>
-                        <p class="giving__description">They are the best gifts there is.</p>
+                        <h3 class="giving__title">Hari/Tanggal</h3>
+                        <p class="giving__description">Sabtu, 14 Desember 2024</p>
                     </div>
 
                     <div class="giving__content">
                         <img src="assets/img/giving2.png" alt="" class="giving__img">
-                        <h3 class="giving__title">Ornaments</h3>
-                        <p class="giving__description">Give a moment to decorate.</p>
+                        <h3 class="giving__title">Pukul</h3>
+                        <p class="giving__description">17:00 WIB s/d Selesai</p>
                     </div>
 
                     <div class="giving__content">
                         <img src="assets/img/giving3.png" alt="" class="giving__img">
-                        <h3 class="giving__title">Lots of love</h3>
-                        <p class="giving__description">Give away feelings that last forever.</p>
+                        <h3 class="giving__title">Tempat</h3>
+                        <p class="giving__description">Aula RSU Eshmun Lantai 8</p>
                     </div>
                 </div>
             </section>
@@ -128,47 +175,40 @@
 
             <!--==================== GIFT ====================-->
             <section class="gift section container" id="gift">
-                <h2 class="section__title">Share A Gift</h2>
+                <h2 class="section__title">Panitia Natal</h2>
 
                 <div class="gift__container grid">
                     <article class="gift__card">
                         <img src="assets/img/gift1.png" alt="" class="gift__img">
                         <i class='bx bx-heart gift__icon'></i>
                         
-                        <h3 class="gift__price">$15</h3>
-                        <span class="gift__title">Gingerbread</span>
+                        <h3 class="gift__price">Ketua Natal</h3>
+                        <span class="gift__title">dr. Orlando Sinaga</span>
                     </article>
 
                     <article class="gift__card">
                         <img src="assets/img/gift2.png" alt="" class="gift__img">
                         <i class='bx bx-heart gift__icon'></i>
                         
-                        <h3 class="gift__price">$22</h3>
-                        <span class="gift__title">Santa Claus Hat</span>
+                        <h3 class="gift__price">Sekretaris Natal</h3>
+                        <span class="gift__title">Ririn Warista</span>
                     </article>
 
                     <article class="gift__card">
                         <img src="assets/img/gift3.png" alt="" class="gift__img">
                         <i class='bx bx-heart gift__icon'></i>
                         
-                        <h3 class="gift__price">$48</h3>
-                        <span class="gift__title">Christmas Tree</span>
+                        <h3 class="gift__price">Bendahara Natal</h3>
+                        <span class="gift__title">Helen Iwashita</span>
                     </article>
-
+                    <article>
+                    </article>
                     <article class="gift__card">
                         <img src="assets/img/gift4.png" alt="" class="gift__img">
                         <i class='bx bx-heart gift__icon'></i>
                         
-                        <h3 class="gift__price">$35</h3>
-                        <span class="gift__title">Snowman</span>
-                    </article>
-
-                    <article class="gift__card">
-                        <img src="assets/img/gift5.png" alt="" class="gift__img">
-                        <i class='bx bx-heart gift__icon'></i>
-                        
-                        <h3 class="gift__price">$12</h3>
-                        <span class="gift__title">Candy Stick</span>
+                        <h3 class="gift__price">dr. Sandy Zahrin Pakpahan, M.K.M</h3>
+                        <span class="gift__title">Direktur RSU Eshmun</span>
                     </article>
                 </div>
             </section>
