@@ -570,6 +570,11 @@ body.dark-theme {
 /*=============== FOOTER ===============*/
 .footer {
   overflow: hidden;
+  color: black;
+  background-color: var(--container-color);
+  box-shadow: 0 4px 16px hsla(355, 25%, 15%, .1);
+  padding: 1.5rem 1rem 1rem;
+  border-radius: .75rem;
 }
 
 .footer__container {
@@ -596,6 +601,7 @@ body.dark-theme {
 .footer__logo, 
 .footer__title {
   margin-bottom: var(--mb-1);
+  color: black;
 }
 
 .footer__title {
@@ -610,7 +616,7 @@ body.dark-theme {
 }
 
 .footer__link {
-  color: var(--text-color);
+  color: black;
   transition: .3s;
 }
 
@@ -734,7 +740,7 @@ body.dark-theme {
   }
 
   .footer__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -801,7 +807,7 @@ body.dark-theme {
   }
 
   .footer__container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
