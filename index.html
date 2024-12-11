@@ -124,6 +124,14 @@
                         modal.style.display = 'none';
                     }
                 });
+
+                function sendMessage() {
+                    const phone = "+6282166861855";
+                    const message = document.getElementById("message_wishes").value;
+                    const encodedMessage = encodeURIComponent(message);
+                    const url = `https://wa.me/${phone}?text=${encodedMessage}`;
+                    window.open(url, "_blank");
+                }
             </script>
                         
 
@@ -162,14 +170,16 @@
                             Celebrate With A <br> Lot Of Love
                         </h2>
                         <p class="celebrate__description">
-                            In this holidays, celebrate with much love and peace, offering many 
-                            blessings to our loved ones, friends and neighbors, wishing them 
-                            a good Christmas message.
+                            "Semoga keajaiban Natal membawa kebahagiaan, kedamaian, dan kesehatan bagi kita semua. Selamat merayakan Natal!"
                         </p>
-                        <a href="#" class="button">Send Good Wishes</a>
+                        <a href="#message" class="button">Send Good Wishes</a>
                     </div>
-
-                    <img src="assets/img/celebrate.png" alt="" class="celebrate__img">
+                    
+                    <div class="overview__container">
+                        <img src="assets/img/christmast_card.png" alt="" class="celebrate__img">
+                        <a href="https://drive.google.com/uc?export=download&id=1g73mp3EqKr5TWnd3QrZSYQmb1U8fD-VF" download="RUNDOWN_ACARA_NATAL_ESHMUN_2024.pdf" class="button">Download Overfiew Event</a>
+                    </div>
+                    
                 </div>
             </section>
 
@@ -275,12 +285,12 @@
             </section>
 
             <!--==================== MESSAGE ====================-->
-            <section class="message section container">
+            <section class="message section container" id="message">
                 <div class="message__container grid">
                     <form action="" class="message__form">
                         <h2 class="message__title">Send Good <br> Wishes!</h2>
-                        <input type="email" placeholder="Write your message" class="message__input">
-                        <button class="button message__button">Send Message</button>
+                        <textarea id="message_wishes" type="text" placeholder="Write your message" class="message__input" required></textarea>
+                        <button id="send_wishes" onclick="sendMessage()" class="button message__button">Send Message</button>
                     </form>
 
                     <img src="assets/img/message.png" alt="" class="message__img">
